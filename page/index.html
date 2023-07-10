@@ -1,0 +1,44 @@
+<!doctype html>
+<html color-mode="light" lang="en">
+<head>
+	<title>Shortfy - Link Hider</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<meta name="description" content="URL Hider">
+	<meta name="keywords" content="url hider, hidden url, url shortener, url shotner, url, shortfy, magnet link">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="preload" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
+    <script type="text/javascript" src="js/goer.js" defer></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" defer></script>
+	<script type="text/javascript" src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js" defer></script>
+</head>
+	<main>
+		<h1>Make your links <a href="/" class="text-gradient">Hidde</a>nnn</h1>
+		<div class="input">
+			<input tabindex="0" id="website" placeholder="https://yoururl.com" aria-label="URL to hide" type="url" autofocus />
+			<button type="submit" onclick="short()">hide.it</button>
+		</div>
+		<div id="active"> </div>
+		<div id="gif" style="visibility: hidden"><img id="gifimg" src="data:image/png;base64,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"></div>
+		<div id="url" style="visibility: hidden">your url: <a id="result" target="_blank"></a> -- valid until <span class="normalt-gradient" id="valid"></span></div>
+		<div id="helpurl" style="visibility: hidden">How URL works: <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL" target="_blank"> Explanation by Mozilla</a> </div>
+
+	</main>
+    <footer>
+        <span><p class="normalt-gradient">https: | http: | magnet: | xml:</p></span>
+    </footer>
+	<script is:inline>
+		document.getElementById("website").addEventListener("keypress", function(event) {
+			if (event.key === "Enter") {
+				event.preventDefault();
+				short();
+			}
+		});
+	</script>
+</html>
